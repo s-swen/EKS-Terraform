@@ -14,6 +14,6 @@ output "vpc_id" {
 }
 
 output "subnet_id" {
-  description = "Single subnet ID used by EKS"
+  description = "Subnet ID used by EKS"
   value       = data.aws_subnet.selected.id
 }
