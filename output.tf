@@ -1,16 +1,19 @@
 output "cluster_id" {
-  value = aws_eks_cluster.devopsshack.id
+  description = "EKS cluster ID"
+  value       = aws_eks_cluster.eks.id
 }
 
 output "node_group_id" {
-  value = aws_eks_node_group.devopsshack.id
+  description = "EKS managed node group ID"
+  value       = aws_eks_node_group.eks_nodes.id
 }
 
 output "vpc_id" {
-  value = aws_vpc.devopsshack_vpc.id
+  description = "VPC ID used by EKS"
+  value       = data.aws_vpc.selected.id
 }
 
-output "subnet_ids" {
-  value = aws_subnet.devopsshack_subnet[*].id
+output "subnet_id" {
+  description = "Single subnet ID used by EKS"
+  value       = data.aws_subnet.selected.id
 }
-
